@@ -34,7 +34,7 @@ def test_leading_zeros(url):
     """
     fibs = {
         '04': 3,
-        '010': 55
+        '0010': 55
     }
     for num in fibs:
         r = requests.get(base_api_url.format(url, num), timeout=30)
@@ -80,11 +80,13 @@ def test_alphanumeric(url):
     """
     An invalid input of mixed numbers & letters should be handled gracefully by the API
     """
-    r = requests.get(base_api_url.format(url, '5a'), timeout=30)
-    assert r.status_code == 404
-    output = r.json()
-    assert 'error' in output, "REST API did not respond with an error message"
-    assert output['error'] == 'resource not found'
+    bad_inputs = ('1e2', '5 * 3', '123abd')
+    for input in bad_inputs:
+        r = requests.get(base_api_url.format(url, input), timeout=30)
+        assert r.status_code == 404
+        output = r.json()
+        assert 'error' in output, "REST API did not respond with an error message"
+        assert output['error'] == 'resource not found'
 
 
 def test_invalid_methods(url):

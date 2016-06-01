@@ -339,7 +339,7 @@ function one_row_for_data() {
     });
 }
 </script>
-    <p>Report generated on 01-Jun-2016 at 16:01:58</p>
+    <p>Report generated on 01-Jun-2016 at 17:29:35</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -349,7 +349,7 @@ function one_row_for_data() {
         <td>Python</td>
         <td>2.7.11</td></tr></table>
     <h2>Summary</h2>
-    <p>10 tests ran in 28.26 seconds.<br/><span class="passed">9 passed</span>, <span class="skipped">0 skipped</span>, <span class="failed">1 failed</span>, <span class="error">0 errors</span>.<br/><span class="skipped">0 expected failures</span>, <span class="failed">0 unexpected passes</span>.</p>
+    <p>10 tests ran in 30.48 seconds.<br/><span class="passed">9 passed</span>, <span class="skipped">0 skipped</span>, <span class="failed">1 failed</span>, <span class="error">0 errors</span>.<br/><span class="skipped">0 expected failures</span>, <span class="failed">0 unexpected passes</span>.</p>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -362,21 +362,21 @@ function one_row_for_data() {
         <tr class="passed results-table-row">
           <td class="col-result">Passed</td>
           <td class="col-name">dev/dg_fib_test/tests/test_dg_fib_be.py::test_valid_numbers</td>
-          <td class="col-duration">3.31</td>
+          <td class="col-duration">3.88</td>
           <td class="col-links"></td>
           <td class="extra">
             <div class="empty log">No log output captured.</div></td></tr>
         <tr class="passed results-table-row">
           <td class="col-result">Passed</td>
           <td class="col-name">dev/dg_fib_test/tests/test_dg_fib_be.py::test_leading_zeros</td>
-          <td class="col-duration">0.80</td>
+          <td class="col-duration">0.75</td>
           <td class="col-links"></td>
           <td class="extra">
             <div class="empty log">No log output captured.</div></td></tr>
         <tr class="passed results-table-row">
           <td class="col-result">Passed</td>
           <td class="col-name">dev/dg_fib_test/tests/test_dg_fib_be.py::test_float</td>
-          <td class="col-duration">0.40</td>
+          <td class="col-duration">0.55</td>
           <td class="col-links"></td>
           <td class="extra">
             <div class="empty log">No log output captured.</div></td></tr>
@@ -390,46 +390,46 @@ function one_row_for_data() {
         <tr class="passed results-table-row">
           <td class="col-result">Passed</td>
           <td class="col-name">dev/dg_fib_test/tests/test_dg_fib_be.py::test_nonnumeric</td>
-          <td class="col-duration">0.45</td>
+          <td class="col-duration">0.42</td>
           <td class="col-links"></td>
           <td class="extra">
             <div class="empty log">No log output captured.</div></td></tr>
         <tr class="passed results-table-row">
           <td class="col-result">Passed</td>
           <td class="col-name">dev/dg_fib_test/tests/test_dg_fib_be.py::test_alphanumeric</td>
-          <td class="col-duration">0.43</td>
+          <td class="col-duration">1.26</td>
           <td class="col-links"></td>
           <td class="extra">
             <div class="empty log">No log output captured.</div></td></tr>
         <tr class="passed results-table-row">
           <td class="col-result">Passed</td>
           <td class="col-name">dev/dg_fib_test/tests/test_dg_fib_be.py::test_invalid_methods</td>
-          <td class="col-duration">1.24</td>
+          <td class="col-duration">1.26</td>
           <td class="col-links"></td>
           <td class="extra">
             <div class="empty log">No log output captured.</div></td></tr>
         <tr class="passed results-table-row">
           <td class="col-result">Passed</td>
           <td class="col-name">dev/dg_fib_test/tests/test_dg_fib_fe.py::test_html</td>
-          <td class="col-duration">0.41</td>
+          <td class="col-duration">0.52</td>
           <td class="col-links"></td>
           <td class="extra">
             <div class="empty log">No log output captured.</div></td></tr>
         <tr class="passed results-table-row">
           <td class="col-result">Passed</td>
           <td class="col-name">dev/dg_fib_test/tests/test_dg_fib_fe.py::test_submit_valid_number</td>
-          <td class="col-duration">5.86</td>
+          <td class="col-duration">6.31</td>
           <td class="col-links"></td>
           <td class="extra">
             <div class="empty log">No log output captured.</div></td></tr>
         <tr class="failed results-table-row">
           <td class="col-result">Failed</td>
           <td class="col-name">dev/dg_fib_test/tests/test_dg_fib_fe.py::test_submit_invalid_number</td>
-          <td class="col-duration">14.74</td>
+          <td class="col-duration">14.69</td>
           <td class="col-links"></td>
           <td class="extra">
-            <div class="log">url = 'http://52.196.171.190'<br/><br/>    def test_submit_invalid_number(url):<br/>        """<br/>        Example test using Selenium to submit an HTML form.<br/>        Assumption is that the result will display an error<br/>        if invalid input is submitted.<br/>        """<br/>        try:<br/>            driver = webdriver.Firefox()<br/>            wait = WebDriverWait(driver, 10)<br/>            driver.get(url)<br/>            input_field = driver.find_element_by_id('number')<br/>            button = driver.find_element_by_id('getFibNumber')<br/>            invalid_number = 'Hello world!'<br/>            input_field.send_keys(invalid_number)<br/>            button.click()<br/>            try:<br/>                wait.until(ec.text_to_be_present_in_element_value(<br/>                (By.ID,'number'),'Invalid number'))<br/>            except TimeoutException:<br/>                # Expected response not found, continue with assert<br/>                traceback.print_exc()<br/>            result = input_field.get_attribute('value')<br/>&gt;           assert result != invalid_number, 'No error message was displayed for invalid input'<br/><span class="error">E           AssertionError: No error message was displayed for invalid input</span><br/><span class="error">E           assert 'Hello world!' != 'Hello world!'</span><br/><br/>tests/test_dg_fib_fe.py:80: AssertionError<br/>----------------------------- Captured stderr call -----------------------------<br/>Traceback (most recent call last):
-  File &quot;/Users/mbertrand/dev/dg_fib_test/tests/test_dg_fib_fe.py&quot;, line 75, in test_submit_invalid_number
+            <div class="log">url = 'http://52.196.171.190'<br/><br/>    def test_submit_invalid_number(url):<br/>        """<br/>        Example test using Selenium to submit an HTML form.<br/>        Assumption is that the result will display an error<br/>        if invalid input is submitted.<br/>        """<br/>        try:<br/>            driver = webdriver.Firefox()<br/>            wait = WebDriverWait(driver, 10)<br/>            driver.get(url)<br/>            input_field = driver.find_element_by_id('number')<br/>            button = driver.find_element_by_id('getFibNumber')<br/>            invalid_number = 'Hello world!'<br/>            input_field.send_keys(invalid_number)<br/>            button.click()<br/>            try:<br/>                wait.until(ec.text_to_be_present_in_element_value(<br/>                (By.ID,'number'),'Invalid number'))<br/>            except TimeoutException:<br/>                # Expected response not found, continue with assert<br/>                traceback.print_exc()<br/>            result = input_field.get_attribute('value')<br/>&gt;           assert result != invalid_number, 'No error message was displayed for invalid input'<br/><span class="error">E           AssertionError: No error message was displayed for invalid input</span><br/><span class="error">E           assert 'Hello world!' != 'Hello world!'</span><br/><br/>tests/test_dg_fib_fe.py:78: AssertionError<br/>----------------------------- Captured stderr call -----------------------------<br/>Traceback (most recent call last):
+  File &quot;/Users/mbertrand/dev/dg_fib_test/tests/test_dg_fib_fe.py&quot;, line 73, in test_submit_invalid_number
     (By.ID,&apos;number&apos;),&apos;Invalid number&apos;))
   File &quot;/Users/mbertrand/.virtualenvs/pytest/lib/python2.7/site-packages/selenium/webdriver/support/wait.py&quot;, line 80, in until
     raise TimeoutException(message, screen, stacktrace)

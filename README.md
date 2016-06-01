@@ -41,7 +41,7 @@ These unit tests are based on the following assumptions:
    * The backend and frontend docker containers running the service are on the same EC2 instance
    * The frontend web page should display an error if invalid input is entered.
    * Only GET requests should be allowed by the backend server (not POST, PUT, or DELETE).
-
+   * Valid inputs include numbers with leading zero's ('010', '005') but not equations ('2*3') or scientific notation ('1e2')
 
 **Installation**
 
