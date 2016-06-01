@@ -35,6 +35,7 @@ python -m pytest --url=<your_url> tests
 ```
 
 **Assumptions**
+
 These unit tests are based on the following assumptions:
 
    * The backend and frontend docker containers running the service are on the same EC2 instance
