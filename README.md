@@ -8,7 +8,7 @@ Pytest was chosen as the unit testing framework.  The structure of the repo is a
 * tests/
     * conftest.py: Configuration/utility methods for tests
     * test_dg_fib_be.py: Back-end unit tests
-    * test_dg_fib_fe.py: Back-end unit tests
+    * test_dg_fib_fe.py: Front-end unit tests
 
 * reports/
     * test_results.xml: Test results in JUnit XML format
