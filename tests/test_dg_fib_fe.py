@@ -32,6 +32,7 @@ def test_submit_valid_number(url):
     This assumes Firefox is installed.  Asserts will be
     skipped if Firefox cannot be found.
     """
+    driver = None
     try:
         driver = webdriver.Firefox()
         wait = WebDriverWait(driver, 10)
@@ -59,6 +60,7 @@ def test_submit_invalid_number(url):
     Assumption is that the result will display an error
     if invalid input is submitted.
     """
+    driver = None
     try:
         driver = webdriver.Firefox()
         wait = WebDriverWait(driver, 10)
