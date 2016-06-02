@@ -85,8 +85,30 @@ def test_alphanumeric(url):
         r = requests.get(base_api_url.format(url, input), timeout=30)
         assert r.status_code == 404
         output = r.json()
-        assert 'error' in output, "REST API did not respond with an error message"
+        assert 'error' in output, "REST API did not respond with an error message for {}".format(input)
         assert output['error'] == 'resource not found'
+
+
+def test_noinput(url):
+    """
+    An invalid empty input should be handled gracefully by the API
+    """
+    r = requests.get(base_api_url.format(url, ''), timeout=30)
+    assert r.status_code == 404
+    output = r.json()
+    assert 'error' in output, "REST API did not respond with an error message"
+    assert output['error'] == 'resource not found'
+
+
+def test_specialchars(url):
+    """
+    An invalid input w/ special characters should be handled gracefully by the API
+    """
+    r = requests.get(base_api_url.format(url, '#^%!&@'), timeout=30)
+    assert r.status_code == 404
+    output = r.json()
+    assert 'error' in output, "REST API did not respond with an error message"
+    assert output['error'] == 'resource not found'
 
 
 def test_invalid_methods(url):

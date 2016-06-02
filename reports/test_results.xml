@@ -1,3 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="0" name="pytest" skips="0" tests="10" time="8.080"><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="9" name="test_valid_numbers" time="3.07844614983"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="30" name="test_leading_zeros" time="0.76797413826"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="45" name="test_float" time="0.387281894684"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="56" name="test_negative_number" time="0.38054895401"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="67" name="test_nonnumeric" time="0.378823280334"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="78" name="test_alphanumeric" time="1.1140203476"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="91" name="test_invalid_methods" time="1.15263700485"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_fe" file="dev/dg_fib_test/tests/test_dg_fib_fe.py" line="13" name="test_html" time="0.370359182358"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_fe" file="dev/dg_fib_test/tests/test_dg_fib_fe.py" line="28" name="test_submit_valid_number" time="0.0846610069275"><system-out>Skipping Selenium test, Firefox not installed/found
-</system-out></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_fe" file="dev/dg_fib_test/tests/test_dg_fib_fe.py" line="56" name="test_submit_invalid_number" time="0.05606508255"><system-out>Skipping Selenium test, Firefox not installed/found
-</system-out></testcase></testsuite>
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="1" name="pytest" skips="0" tests="12" time="28.682"><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="9" name="test_valid_numbers" time="3.07421827316"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="30" name="test_leading_zeros" time="0.780857086182"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="45" name="test_float" time="0.365453958511"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="56" name="test_negative_number" time="0.382336854935"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="67" name="test_nonnumeric" time="0.390528917313"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="78" name="test_alphanumeric" time="1.14045810699"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="91" name="test_noinput" time="0.390336990356"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="102" name="test_specialchars" time="0.389403104782"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_be" file="dev/dg_fib_test/tests/test_dg_fib_be.py" line="113" name="test_invalid_methods" time="1.16041517258"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_fe" file="dev/dg_fib_test/tests/test_dg_fib_fe.py" line="13" name="test_html" time="0.395692825317"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_fe" file="dev/dg_fib_test/tests/test_dg_fib_fe.py" line="28" name="test_submit_valid_number" time="5.54591012001"></testcase><testcase classname="dev.dg_fib_test.tests.test_dg_fib_fe" file="dev/dg_fib_test/tests/test_dg_fib_fe.py" line="56" name="test_submit_invalid_number" time="14.3259460926"><failure message="AssertionError: No error message was displayed for invalid input
+assert &apos;Hello world!&apos; != &apos;Hello world!&apos;">url = &apos;http://52.196.171.190&apos;
+
+    def test_submit_invalid_number(url):
+        &quot;&quot;&quot;
+        Example test using Selenium to submit an HTML form.
+        Assumption is that the result will display an error
+        if invalid input is submitted.
+        &quot;&quot;&quot;
+        driver = None
+        try:
+            driver = webdriver.Firefox()
+            wait = WebDriverWait(driver, 10)
+            driver.get(url)
+            input_field = driver.find_element_by_id(&apos;number&apos;)
+            button = driver.find_element_by_id(&apos;getFibNumber&apos;)
+            invalid_number = &apos;Hello world!&apos;
+            input_field.send_keys(invalid_number)
+            button.click()
+            try:
+                wait.until(ec.text_to_be_present_in_element_value(
+                (By.ID,&apos;number&apos;),&apos;Invalid number&apos;))
+            except TimeoutException:
+                # Expected response not found, continue with assert
+                traceback.print_exc()
+            result = input_field.get_attribute(&apos;value&apos;)
+&gt;           assert result != invalid_number, &apos;No error message was displayed for invalid input&apos;
+E           AssertionError: No error message was displayed for invalid input
+E           assert &apos;Hello world!&apos; != &apos;Hello world!&apos;
+
+tests/test_dg_fib_fe.py:80: AssertionError</failure><system-err>Traceback (most recent call last):
+  File &quot;/Users/mbertrand/dev/dg_fib_test/tests/test_dg_fib_fe.py&quot;, line 75, in test_submit_invalid_number
+    (By.ID,&apos;number&apos;),&apos;Invalid number&apos;))
+  File &quot;/Users/mbertrand/.virtualenvs/pytest/lib/python2.7/site-packages/selenium/webdriver/support/wait.py&quot;, line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+TimeoutException: Message: 
+
+</system-err></testcase></testsuite>
